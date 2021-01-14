@@ -1,0 +1,567 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+    font-weight: 400;
+    min-height: 100vh;
+
+    background: url(images/image2.png);
+    background-size: cover;
+}
+
+button {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.555);
+    outline: none;
+    border: 1px solid rgb(167, 167, 167);
+    border-radius: 5px;
+    padding: 10.5px;
+    width: 75px;
+
+    font-weight: 700;
+}
+
+/* body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 0, 0, 0.63), rgba(255, 0, 255, 0.575));
+    clip-path: polygon(50% 68%, 69% 70%, 84% 75%, 100% 76%, 100% 100%, 50% 100%, 0 100%, 0 82%, 14% 76%, 31% 71%);
+}
+
+body::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 0, 0, 0.63), rgba(255, 0, 255, 0.575));
+    clip-path: circle(20% at left 40%);
+} */
+
+a {
+    text-decoration: none;
+}
+
+    .glass {
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        background:rgba(255, 255, 255, 0.1);
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(15px);
+    }
+
+    .darkGlass {
+        background:rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(5px);
+    }
+
+    .brightMode {
+        background-color: #adadad;
+        color: black;
+    }
+
+    .darkMode {
+        background: rgb(0, 0, 0);
+        color: white;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+
+        padding: 8px;
+
+        margin-bottom: 10px;
+    }
+
+    header a.menu__button {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    header a.add__task__button {
+        font-size: 20px;
+        font-weight: 700;
+        outline: none;
+        transition: transform .3s ease;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    #toDo {
+        text-transform: uppercase;
+    }
+
+    .rotate {
+        transform: rotate(45deg);
+    }
+
+.menu__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+
+    max-height: 0px;
+
+    transition: max-height .3s ease;
+}
+
+.menu {
+    transform: translateY(-300px);
+    transition: transform .3s ease;
+    width: 100%;
+}
+
+.show__menu {
+    transform: translateY(0);
+}
+
+.close__menu {
+    transform: translateY(-300px);
+}
+
+.menu__item {
+    text-align: center;
+    padding: 10px;
+    margin: 0px 7px 10px 7px;
+    list-style: none;
+    border-radius: 5px;
+
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+/* .menu__item::after {
+    display: block;
+    content: "";
+    border-top: 1px solid black;
+    width: 100%;
+    margin: 0 auto;
+} */
+
+
+    /* TASK BOX */
+    .taskBox {
+        width: calc(100% - 20px);
+        height: 250px;
+        padding: 10px;
+        border-radius: 5px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        position: relative;
+    }
+
+    .taskBox h2 {
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* SET TASK NAME */
+    .set__task__name #name {
+        outline: none;
+        border-radius: 5px;
+        /* border: 1px solid rgb(167, 167, 167); */
+        /* -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); */
+        padding: 10px;
+        height: 18px;
+        width: 200px;
+
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    /* SET TASK COLOR */
+
+    .set__task__color table {
+        width: 240px;
+        border-spacing: 20px;
+    }
+ 
+    .set__task__color th {
+        padding: 30px;
+        overflow: hidden;
+        border-radius: 50px;
+        opacity: 0.9;
+        border-top: 1px solid rgba(255, 255, 255, 0.7);
+        border-left: 1px solid rgba(255, 255, 255, 0.7);
+        position: relative;
+        box-shadow: 3px 3px 10px black;
+    }
+
+    .set__task__color th::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, #ffffff00, #0000008a);
+   }
+
+    .task__color {
+        border-radius: 45px;
+        border-color: rgb(110, 110, 110);
+        padding: 0px 6px;
+        height: 12px;
+        transform: translateY(10px);
+    }
+
+    /* SET TASK TIME */
+    .set__task__time {
+        align-items: center;
+        border-radius: 5px;
+    }
+
+    .set__task__time div {
+        padding: 10px;
+    }
+
+    .set__task__time h2{
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .set__task__time .clock {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+        .clock .hours {
+            border: 1px solid rgb(119, 119, 119);
+            background-color: rgba(255, 255, 255, 0.315);
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .clock .minutes {
+            border: 1px solid rgb(119, 119, 119);
+            background-color: rgba(255, 255, 255, 0.315);
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+        }
+
+    /* SET TASK NOTIFICATIONS */
+    .set__task__notifications {
+        align-items: center;
+        text-align: center;
+    }
+
+    .set__task__notifications .notifications__item {
+        list-style: none;
+        padding: 5px;
+    }
+
+    .set__task__notifications input {
+        margin-right: 10px;
+    }
+/* 
+    .set__task__notifications .notifications__item::after {
+        display: block;
+        content: "";
+        border-top: 1px solid black;
+        width: 100%;
+        margin: 0 auto;
+    } */
+
+    .set__task__notifications .notifications__link {
+        font-size: 22px;
+        text-decoration: none;
+        font-weight: 400;
+    }
+
+    .set__task__notifications button {
+        margin: 10px;
+    }
+
+
+
+
+/* TASKS */
+.noTasksMessage {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 200px;
+}
+
+.noTasksMessage button {
+    margin-top: 30px;
+
+}
+
+.task {
+    height: 270px;
+
+    max-height: 30px;
+
+    border-radius: 5px;
+
+    transition: max-height 0.3s ease;
+    margin-bottom: 10px;
+
+
+    padding: 10px;
+    
+    font-size: 20px;
+    font-weight: 500;
+
+    overflow: hidden;
+}
+
+.taskMain {
+    display: flex;
+    flex-direction: row;    
+    border-radius: 5px;
+
+    position: relative;
+}
+
+.taskExpanded {
+    max-height: 270px;
+}
+
+
+.task__name {
+    margin-left: 5px;
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.task__time {
+    position: absolute;
+    right: 5px;
+}
+.task__date {
+    position: absolute;
+    right: 65px;
+}
+
+.task__notifications {
+    margin: 15px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.287);
+    border: 1px solid black;
+
+    position: absolute;
+    right: 0;
+
+    height: 75%;
+    width: 60px;
+
+    font-size: 16px;
+
+    text-align: center;
+}
+
+.task__notifications p {
+    padding: 5px;
+}
+
+.task__notifications .switch {
+    width: 40px;
+    display: inline-block;
+    position: relative;
+
+    margin-bottom: 10px;
+}
+
+.task__notifications .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.task__notifications .slider {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 40px;
+    height: 100%;
+
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.37);
+
+    background-color: grey;
+
+    transition: .3s ease;
+}
+
+.task__notifications .slider::before {
+    display: inline-block;
+    content: "";
+
+    position: absolute;
+    left: 3px;
+    top: 3px;
+
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: white;
+
+    transition: .3s ease;
+}
+
+.task__notifications .switch input:checked + .slider {
+    background-color: red;
+}
+
+.task__notifications .switch input:checked + .slider::before {
+    transform: translate(19px);
+}
+
+.hide {
+    display: none;
+}
+
+    footer {
+        padding-bottom: 10px;
+        position: absolute;
+        bottom: 0;
+
+        text-align: center;
+
+        width: 100%;
+    }
+
+/* CALENDAR */
+
+.calendar {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.calendarHeader {
+    display: flex;
+    justify-content: center;
+
+    padding: 5px 10px;
+}
+
+.calendarHeader a,
+.calendarHeader p {
+    flex: 33%;
+}
+
+.calendar__previousMonth {
+    text-align: left;
+}
+
+.calendar__currentMonth {
+    text-align: center;
+}
+
+.calendar__nextMonth {
+    text-align: right;
+}
+
+.days {
+    position: relative;
+    z-index: 1;
+}
+
+.calendar__anotherMonth {
+    background-color: rgba(187, 186, 186, 0.226);
+    z-index: 1;
+}
+
+.calendar__activeDay {
+    color: white;
+    position: relative;
+    /* background: green;
+    border-radius: 45px;
+    color: white; */
+}
+
+.calendar__activeDay::after {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    background-color: green;
+    width: 50%;
+    height: 130%;
+    border-radius: 45px;
+    transform: translate(50%, -5%);
+}
+
+
+
+.calendar__weekdays {
+    background-color: rgba(255, 0, 0, 0.438);
+    padding: 3px 0px 7px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.calendar__weekdays div {
+    height: 20px;
+    width: 14%;
+}
+
+.days {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.days div {
+    height: 20px;
+    width: 14%;
+}
+
+.setDate {
+    font-weight: 400;
+    text-align: center;
+}

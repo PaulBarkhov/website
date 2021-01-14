@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style/style.css">
+    <title>To Do List</title>
+</head>
+<body class="brightMode">
+    <header class="glass">
+        <a class="menu__button">☰</a>
+        <h2 id="toDo">To Do List</h2>
+        <a class="add__task__button">➕</a>
+    </header>
+
+    <div class="menu__wrapper">
+        <ul class="menu">
+            <li class="menu__item glass" id="menu__addNewTaskButton">add new task</li>
+            <li class="menu__item glass">task history</li>
+            <li class="menu__item glass">settings</li>
+            <li class="menu__item glass">help</li>
+            <li class="menu__item glass" id="menu__darkModeButton">Dark Mode</li>
+        </ul>
+    </div>
+
+    <div class="add__task__window__wrapper hide">
+            <div class="add__task__window">
+
+                <div class="set__task__name glass taskBox hide">    
+                    <h2>Give it a name</h2>
+                    <input autocomplete="off" placeholder="New Task" type="text" id="name">
+                    <button id="task__name__OK__button" class="glass">OK</button>
+                </div>
+
+                <div class="set__task__color glass taskBox hide">
+                    <table>
+                        <h2>Set color</h2>
+
+                        <tr>
+                            <th style="background-color: green"></th>
+                            <th style="background-color: red"></th>
+                            <th style="background-color: purple"></th>
+                        </tr>
+                        <tr>
+                            <th style="background-color: yellow"></th>
+                            <th style="background-color: blue"></th>
+                            <th style="background-color: pink"></th>
+                        </tr>
+                    </table>    
+                </div>
+
+                <div class="set__task__time glass hide taskBox">
+                    <h2>Set time</h2>
+                    <div class="clock">
+                        <div class="hours">12</div>
+                        :
+                        <div class="minutes">30</div>
+                    </div>
+
+                    <div>
+                        <button id="task__time__OK__button">OK</button>
+                        <button id="task__date__skip__button">SKIP</button>
+                    </div>
+
+
+
+                </div>
+
+                <div class="set__task__notifications glass taskBox hide">
+                    <h2>Set notifications</h2>
+                    <ul class="notifications">
+                        <hr>
+                        <li class="notifications__item"><input type="checkbox" name="minutes" id="minutes" checked="true"><label for="minutes" class="notifications__link">10 minutes before event</label></li>
+                        <hr>
+                        <li class="notifications__item"><input type="checkbox" name="hour" id="hour"><label for="hour" class="notifications__link">One hour before the event</label></li>
+                        <hr>
+                        <li class="notifications__item"><input type="checkbox" name="day" id="day"><label for="day" class="notifications__link">One day before the event</label></li>
+                        <hr>
+                    </ul>
+                    <button id="task__notifications__OK__button">OK</button>
+
+                </div>
+            </div>
+    </div>
+
+    <main>
+
+        <div class="calendar glass">
+
+            <h2 class="setDate hide">Set Date</h2>
+
+
+            <div class="calendarHeader">
+                <a class="calendar__previousMonth"></a>
+                <p class="calendar__currentMonth"></p>
+                <a class="calendar__nextMonth"></a>
+    
+            </div>
+    
+            <div class="calendarBody">
+                <div class="calendar__weekdays">
+                    <div>Mo</div>
+                    <div>Tu</div>
+                    <div>We</div>
+                    <div>Th</div>
+                    <div>Fr</div>
+                    <div>Sa</div>
+                    <div>Su</div>
+                </div>
+    
+                <div class="calendar__days">
+                </div>
+    
+            </div>
+    
+            <div class="calendarFooter">
+    
+            </div>
+    
+        </div>
+
+        <div class="content">
+
+        
+        </div>
+
+    </main>
+
+    <footer>
+        <!-- <p>2020 Simple Apps Ltd.</p>
+        <p>All right reserved</p> -->
+    </footer>
+    
+<script src="scripts/script.js"></script>
+</body>
+</html>
