@@ -42,28 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     menu__darkModeButton.addEventListener("click", () => {
-        body.classList.toggle("brightMode");
-        body.classList.toggle("darkMode");
-
-        // glass.forEach(item => {
-        //     if (item.classList.contains("glass")) {
-        //         item.classList.remove("glass");
-        //         item.classList.add("darkGlass");
-        //     }
-        //     else {
-        //         item.classList.add("glass");
-        //         item.classList.remove("darkGlass");
-        //     }
-        // });
+        // body.classList.toggle("brightMode");
+        // body.classList.toggle("darkMode");
 
         if (menu__darkModeButton.innerHTML == "Dark Mode") {
             menu__darkModeButton.innerHTML = "Bright Mode";
-            body.style.background = "url(style/images/image1.jpg)";
+            body.style.background = "url(style/images/bright1.jpg)";
         
         }
         else {
             menu__darkModeButton.innerHTML = "Dark Mode";
-            body.style.background = "url(style/images/image2.png)";
+            body.style.background = "url(style/images/bright1.jpg)";
         }
     });
 
